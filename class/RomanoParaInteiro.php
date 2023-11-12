@@ -30,7 +30,8 @@ protected static $romanNumerals = [
         for ($i = 0; $i < strlen($roman); ++$i) {
 
             // Obtém o valor correspondente ao numeral romano atual, utilizando o array associativo $romanNumerals definido na classe.
-            $currentValue = self::$romanNumerals[$roman[$i]];
+            $currentValue = isset(self::$romanNumerals[$roman[$i]]) ? self::$romanNumerals[$roman[$i]] : 0;
+
 
             // Verifica se o caractere atual é o último ou se o próximo valor é menor ou igual ao atual. Isso é importante para determinar se o valor atual será somado ao resultado ou subtraído.
             if ($i == strlen($roman) - 1 || self::$romanNumerals[$roman[$i + 1]] <= self::$romanNumerals[$roman[$i]]) {
