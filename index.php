@@ -1,6 +1,8 @@
 <?php
-require_once('IntegerToRomanConverter.php');
-require_once('RomanToIntegerConverter.php');
+use class\InteiroParaRomano;
+use class\RomanoParaInteiro;
+require_once("../atividade-1/class/InteiroParaRomano.php");
+require_once('../atividade-1/class/RomanoParaInteiro.php');
 
 ?>
 
@@ -11,7 +13,7 @@ require_once('RomanToIntegerConverter.php');
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Conversor Romano</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../atividade-1/public/css/style.css">
 </head>
 
 <body >
@@ -42,10 +44,10 @@ require_once('RomanToIntegerConverter.php');
             <?php
             if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 if (isset($_POST['inteiro'])) {
-                    $integerNumber = intval($_POST['inteiro']);
-                    $result = IntegerToRomanConverter::intToRoman($integerNumber);
+                    $NumeroInteiro = intval($_POST['inteiro']);
+                    $result = InteiroParaRomano::intToRoman($NumeroInteiro);
 
-                    echo "<p class='mt-3'>O número inteiro $integerNumber é igual a $result em algarismos romanos.</p>";
+                    echo "<p class='mt-3'>O número inteiro $NumeroInteiro é igual a $result em algarismos romanos.</p>";
                 } else {
                     echo "<p class='mt-3 text-danger'>Por favor, insira um número inteiro.</p>";
                 }
@@ -68,10 +70,10 @@ require_once('RomanToIntegerConverter.php');
             // Processa o formulário
             if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 if (isset($_POST['romano'])) {
-                    $romanNumber = strtoupper($_POST['romano']);
-                    $result = RomanToIntegerConverter::romanToInt($romanNumber);
+                    $NumeroRomano = strtoupper($_POST['romano']);
+                    $result = RomanoParaInteiro::romanToInt($NumeroRomano);
 
-                    echo "<p class='mt-3'>O número romano $romanNumber é igual a $result em números inteiros.</p>";
+                    echo "<p class='mt-3'>O número romano $NumeroRomano é igual a $result em números inteiros.</p>";
                 } else {
                     echo "<p class='mt-3 text-danger'>Por favor, insira um número romano.</p>";
                 }
