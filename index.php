@@ -13,17 +13,12 @@ require_once('../atividade-1/class/RomanoParaInteiro.php');
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Conversor Romano</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="../atividade-1/public/css/style.css">
+    <link rel="stylesheet" href="../atividade-1/css/style.css">
 </head>
 
 <body >
 
- <!-- Barra de Navegação Bootstrap personalizada -->
- <nav class="navbar navbar-expsand-lg navbar-light navbar-custom nav">
-        <div class="container-fluid">
-            <h1 class="navbar-brand mx-auto">Conversor Numérico</h1> <!-- Adiciona a classe mx-auto para centralizar horizontalmente -->
-        </div>
-    </nav>
+<?php include '../atividade-1/includes/footer.php'; ?>
 
     
    
@@ -83,18 +78,7 @@ require_once('../atividade-1/class/RomanoParaInteiro.php');
     </div>
     <div class="espaco"></div>
     </div>
- 
-
-        <!-- Rodapé -->
-        <footer class="bg-dark text-light py-4">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 mx-auto">
-                    <p>&copy; 2023 Gabriel Developer. Todos os direitos reservados.</p>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <?php include '../atividade-1/includes/footer.php'; ?>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
